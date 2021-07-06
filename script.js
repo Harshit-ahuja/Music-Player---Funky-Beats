@@ -131,14 +131,24 @@ audio.onended = function() {
   positionControl.value = 0;
 }
 
-positionControl.onmousedown = function() {
+
+// positionControl.onmousedown = function() { // works well on PC but not on mobile devices
+//   audio.ontimeupdate = null;
+//   audio.pause();
+//   isSongPlaying = false;
+//   playBtn.innerHTML = "play_circle_filled";
+//   body.classList.remove("music-on");
+// }
+
+
+//Works on PC as well as on mobile devices
+positionControl.onpointerdown = function() {
   audio.ontimeupdate = null;
   audio.pause();
   isSongPlaying = false;
   playBtn.innerHTML = "play_circle_filled";
   body.classList.remove("music-on");
 }
-
 
 
 
